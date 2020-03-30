@@ -2,7 +2,7 @@
 
 keytime=`date +%Y%m%d%H%M`
 
-if [[ -d /root/.ssh ]] 
+if [[ -d ~/.ssh ]] 
   then
  ssh-keygen -f /tmp/key-$keytime -N ''
  
@@ -13,7 +13,7 @@ echo "Please find the private key below"
 cat /tmp/key-$keytime
 rm -rf /tmp/key-$keytime 
 else 
-  mkdir /root/.ssh && chmod 700 /root/.ssh
+  mkdir ~/.ssh && chmod 700 ~/.ssh
   ssh-keygen -f /tmp/key-$keytime -N ''
  
   cat /tmp/key-$keytime.pub >> ~/.ssh/authorized_keys
