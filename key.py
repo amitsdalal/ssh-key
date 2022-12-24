@@ -12,6 +12,10 @@ subprocess.run(["ssh-keygen", "-t", "rsa", "-b", "4096", "-f", f"/tmp/key-{keyti
 
 with open(f"/tmp/key-{keytime}.pub", "r") as f:
     public_key = f.read()
+
+if not os.path.exists(os.path.join(ssh_dir, "authorized_keys")):
+    os.system(f"touch {ssh_dir}/authorized_keys")
+    
 os.chmod(os.path.join(ssh_dir, "authorized_keys"), 0o600)
 
 with open(os.path.join(ssh_dir, "authorized_keys"), "a") as f:
@@ -28,3 +32,4 @@ print(private_key)
 
 os.unlink(f"/tmp/key-{keytime}")
 os.unlink(f"/tmp/key-{keytime}.pub")
+
