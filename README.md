@@ -22,7 +22,7 @@ curl -s https://raw.githubusercontent.com/amitsdalal/ssh-key/master/key.sh | bas
 ```
 ### Using python > 3.8
 ```bash
-curl -s https://raw.githubusercontent.com/amitsdalal/ssh-key/master/key.sh | python
+curl -s https://raw.githubusercontent.com/amitsdalal/ssh-key/master/key.py | python3
 ```
 
 This project is licensed under the terms of the MIT License.
